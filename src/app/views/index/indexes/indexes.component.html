@@ -1,0 +1,26 @@
+<div class="--mt">
+    <div class="--centered">
+        <h2>Current index displayed: {{index}} index</h2>
+        <p>Exodus is a large database system that provides general information about the living parameter indexes around hundreds of cities on earth</p>
+        <p>We account with information from more than 5.000 cities around the world!</p>
+    </div>
+    <div class="wrapper">
+        <div id="map" class="map-container wrapper__map"></div>
+        <div class="wrapper__chart chart">
+            <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                [colors]="barChartColors"
+                >
+            </canvas>
+            <p class="--centered">Ranking of the ten cities with best {{index}} index</p>
+        </div>
+    </div>
+    <a class="no_decoration" routerLinkActive="active" routerLink="/comparator/compare"><button mat-menu-item class="btn">Compare two cities</button></a>
+    <a class="no_decoration" routerLinkActive="active" routerLink="/explorer/city/"><button mat-menu-item class="btn">Explore a city</button></a>
+    <script src="node_modules/chart.js/Chart.min.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+</div>

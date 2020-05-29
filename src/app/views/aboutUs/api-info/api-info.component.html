@@ -1,0 +1,235 @@
+<div class="--justified --mt">
+    <h2>Api documentation</h2>
+    <p>To connect to our API, a key is needed. Every method will require the following
+        configuration: <i>http://localhost:8000/api/[method]/[method_parameters]?/[key]</i>
+    </p>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Map cities data
+                </mat-panel-title>
+                <mat-panel-description>
+                    Data list for drawing the map cities
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+        <div>
+            <div class="data_params">
+                <p>Parameters:</p>
+                <p><i>api_key</i></p>
+                <p><i>index</i></p>
+                <p>Example call:</p>
+                <p><i>/api/salaries/index/api_key=your_api_key</i></p>
+            </div>
+            <div class="data_example">
+                <p>Data list first object:</p>
+                <p>"Tampa, United States":</p>
+                <div class="--indent">
+                    <p>"City_name":"Tampa, United States",</p>
+                    <p>"Salary":"3720.19"</p>
+                    <p>"Qli":"72.56",</p>
+                    <p>"Longitude":"-82.4584279",</p>
+                    <p>"Latitude":"27.9475216",</p>
+                    <p>"Infraestructure":"100.0",</p>
+                    <p>"Environment":"44.0",</p>
+                    <p>"Pollution":"90",</p>
+                    <p>"Safety":"51",</p>
+                    <p>"Health":"68",</p>
+                    <p>"Rent":"80.0",</p>
+                    <p>"Employment":"90.0",</p>
+                    <p>"Diversity":"100.0",</p>
+                    <p>"Traffic":"30.0",</p>
+                    <p>"Color_qli":"#1de500"</p>
+                </div>
+            </div>
+        </div>
+            
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    World cities data
+                </mat-panel-title>
+                <mat-panel-description>
+                    Cities data
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <div class="data_params">
+                    <p>Parameters:</p>
+                    <p><i>api_key</i></p>
+                    <p><i>search_text</i></p>
+                    <p>Example call:</p>
+                    <p><i>/api/worldcities/search_text/api_key=your_api_key</i></p>
+                    <p><i>/api/worldcities/Berlin/api_key=your_api_key</i></p>
+                </div>
+                <div class="data_example">
+                    <p>0:</p>
+                    <div class="--indent">
+                        <p>"City_name":"Berlin",</p>
+                        <p>"Country_name":"Germany"</p>
+                    </div>
+                    <p>1:</p>
+                    <div class="--indent">
+                        <p>"City_name":"Berlin",</p>
+                        <p>"Country_name":"El Salvador"</p>
+                    </div>
+                </div>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    City names
+                </mat-panel-title>
+                <mat-panel-description>
+                    This provides a list with the city names available
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <div class="data_params">
+                    <p>Parameters:</p>
+                    <p><i>api_key</i></p>
+                    <p>Example call:</p>
+                    <p><i>/api/allcities/api_key=your_api_key</i></p>
+                </div>
+                <div class="data_example">
+                    <p>0:</p>
+                    <div class="--indent">
+                        <p>"City_name":"Batam",</p>
+                        <p>"Country_name":"Indonesia"</p>
+                    </div>
+                    <p>1:</p>
+                    <div class="--indent">
+                        <p>"City_name":"Huzhou",</p>
+                        <p>"Country_name":"China"</p>
+                    </div>
+                </div>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    City data
+                </mat-panel-title>
+                <mat-panel-description>
+                    It gets the data from a particular city
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <div class="data_params">
+                    <p>Parameters:</p>
+                    <p><i>api_key</i></p>
+                    <p><i>city</i></p>
+                    <p><i>country</i></p>
+                    <p>Example call:</p>
+                    <p><i>/api/cityData/city/country/api_key=your_api_key</i></p>
+                    <p><i>/api/cityData/Brussels/Belgium/api_key=your_api_key</i></p>
+                </div>
+                <div class="data_example">
+                    <p>"Brussels, Belgium":</p>
+                    <div class="--indent">
+                        <p>"City_name":"Brussels, Belgium",</p>
+                        <p>"Salary":"2632.46"</p>
+                        <p>"Qli":"67.56",</p>
+                        <p>"Longitude":"4.5317103",</p>
+                        <p>"Latitude":"50.8503396",</p>
+                        <p>"Infraestructure":"75",</p>
+                        <p>"Environment":"44",</p>
+                        <p>"Pollution":"50",</p>
+                        <p>"Safety":"51",</p>
+                        <p>"Health":"74",</p>
+                        <p>"Rent":"76",</p>
+                        <p>"Employment":"90",</p>
+                        <p>"Diversity":"100",</p>
+                        <p>"Traffic":"50",</p>
+                        <p>"Purchasing":"93.16868"</p>
+                        <p>"Cpi":"51.31314"</p>
+                    </div>
+                </div>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Country data
+                </mat-panel-title>
+                <mat-panel-description>
+                    It gets the data from a particular country
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <div class="data_params">
+                    <p>Parameters:</p>
+                    <p><i>api_key</i></p>
+                    <p><i>country</i></p>
+                    <p>Example call:</p>
+                    <p><i>/api/cityData/country/api_key=your_api_key</i></p>
+                    <p><i>/api/cityData/Norway/api_key=your_api_key</i></p>
+                </div>
+                <div class="data_example">
+                    <p>"Norway":</p>
+                    <div class="--indent">
+                        <p>"Country":"Norway",</p>
+                        <p>"Salary":"4026.88"</p>
+                        <p>"Pollution":"20.02",</p>
+                        <p>"Safety":"65.27",</p>
+                        <p>"Health":"74.50",</p>
+                        <p>"Traffic":"26.67",</p>
+                        <p>"Purchasing":"87.15839"</p>
+                        <p>"Cpi":"65.64389"</p>
+                    </div>
+                </div>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Currencies
+                </mat-panel-title>
+                <mat-panel-description>
+                    Retrieves the list of currencies available
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <div class="data_params">
+                    <p>Parameters:</p>
+                    <p><i>api_key</i></p>
+                    <p>Example call:</p>
+                    <p><i>/api/currencies/api_key=your_api_key</i></p>
+                </div>
+                <div class="data_example">
+                    <p>0: "AED"</p>
+                    <p>1: "AFN"</p>
+                    <p>2: "ALL"</p>
+                    <p> ... </p>
+                    <p>164: "ZWL"</p>
+                </div>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Currency change
+                </mat-panel-title>
+                <mat-panel-description>
+                    Retrieves the conversion factor between two currencies
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div>
+                <div class="data_params">
+                    <p>Parameters:</p>
+                    <p><i>api_key</i></p>
+                    <p><i>current_currency</i></p>
+                    <p><i>new_currency</i></p>
+                    <p>Example call:</p>
+                    <p><i>/api/currencychange/current_currency/new_currency/api_key=your_api_key</i></p>
+                    <p><i>/api/currencychange/CHF/SEK/api_key=your_api_key</i></p>
+                </div>
+                <div class="data_example">
+                    10.002852694076
+                </div>
+            </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+</div>

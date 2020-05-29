@@ -1,0 +1,58 @@
+<div class="--mt">
+    <header class='--centered'>   
+        <div class="--inputForm">
+            <h2>City Comparator </h2>
+            <form [formGroup]='stateForm' novalidate>
+                <div class="pos-rel">
+                    <label for="search">
+                        <i class='fa fa-search color-purple'></i>
+                    </label>
+                    <input id="search" placeholder="Select a city (Berlin, Germany)" (click)="toggleDropDown()" formControlName="search" class="input_underline search-bar" type="text">
+                    <div *ngIf="showDropDown" class="state-container-dropdown">
+                        <div>
+                            <div (click)="selectValueOne(s)" class="state" *ngFor="let s of states|searchFilterThree: getSearchValue()">
+                                {{s.CITY_NAME}}, {{s.COUNTRY_NAME}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <h2>Vs</h2>
+            <br>
+            <form [formGroup]='stateFormTwo' novalidate>
+                <div class="pos-rel">
+                    <label for="searchTwo">
+                        <i class='fa fa-search icon-pos color-purple'></i>
+                    </label>
+                    <input id="searchTwo" placeholder="Select a city (Bern, Switzerland)" (click)="toggleDropDownTwo()" formControlName="searchTwo" class="input_underline search-bar" type="text">
+                    <div *ngIf="showDropDownTwo" class="state-container-dropdown">
+                        <div>
+                            <div (click)="selectValueTwo(q)" class="state" *ngFor="let q of states|searchFilterTwo: getSearchValueTwo()">
+                                {{q.CITY_NAME}}, {{q.COUNTRY_NAME}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button mat-menu-item class="btn" (click)="compare()">Compare cities</button>
+        </div>
+    </header>
+
+    <div class="--currencie --pd --centered" id="currencieid">
+        <button mat-menu-item class="btn_currency" [disabled]="disabled" id="currencie" (click)="currencieChange()">Change currencie</button>
+        <mat-form-field class="--pd">
+            <mat-label>Select currencie</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let currencie of currencies" [value]="currencie" id="currencieoption">
+                {{currencie}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    
+    <div class="wrapper">
+        <div id="comparison" class="wrapper__comparison --justified"></div>
+        <div id="comparisonAdvanced" class="wrapper__other --justified"></div>
+    </div>
+</div>

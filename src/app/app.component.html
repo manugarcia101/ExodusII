@@ -1,0 +1,35 @@
+<div>
+    <button class="exodus_menu" mat-button mat-icon-button [matMenuTriggerFor]="exodus"><h1 id="MenuTitle">Exodus</h1><mat-icon>menu</mat-icon></button>
+
+    <mat-menu #exodus="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="indexes">Indexes</button>
+        <a class="--no_decoration" routerLinkActive="active" routerLink="/comparator/compare"><button mat-menu-item>Comparator</button></a>
+        <a class="--no_decoration" routerLinkActive="active" routerLink="/explorer/city"><button mat-menu-item>Explorer</button></a>
+    </mat-menu>
+    
+    <mat-menu #indexes="matMenu">
+        <a class="--no_decoration" routerLink="/indexes/index/Qli" routerLinkActive="active"><button mat-menu-item>Quality of life</button></a>
+        <a class="--no_decoration" routerLink="/indexes/index/Health" routerLinkActive="active"><button mat-menu-item>Health</button></a>
+        <a class="--no_decoration" routerLink="/indexes/index/Infraestructure" routerLinkActive="active"><button mat-menu-item>Infraestructure</button></a>
+        <a class="--no_decoration" routerLink="/indexes/index/Environment" routerLinkActive="active"><button mat-menu-item>Environment</button></a>
+        <a class="--no_decoration" routerLink="/indexes/index/Pollution" routerLinkActive="active"><button mat-menu-item>Free of air pollution</button></a>
+        <a class="--no_decoration" routerLink="/indexes/index/Safety" routerLinkActive="active"><button mat-menu-item>Safety</button></a>
+        <a class="--no_decoration" routerLink="/indexes/index/Rent" routerLinkActive="active"><button mat-menu-item>Rent</button></a>
+        <a class="--no_decoration" routerLink="/indexes/index/Employment" routerLinkActive="active"><button mat-menu-item>Employment</button></a>
+        <a class="--no_decoration" routerLink="/indexes/index/Diversity" routerLinkActive="active"><button mat-menu-item>Diversity</button></a>
+        <a class="--no_decoration" routerLink="/indexes/index/Traffic" routerLinkActive="active"><button mat-menu-item>Traffic</button></a>
+    </mat-menu>
+</div>
+<router-outlet></router-outlet>
+
+<!--footer-->
+<footer>
+    <div class="--gr_back">
+        <a class="--no_decoration" routerLinkActive="active" routerLink="/aboutUs/about"><button mat-menu-item class="footer_btn">About us</button></a>
+        <a class="--no_decoration" routerLinkActive="active" routerLink="/aboutUs/api"><button mat-menu-item class="footer_btn">Api</button></a>
+    </div>
+    <div class="--bk_back">
+      <p>@2020 Final Master Project, Manuel García López</p>
+      <p>Universitat Oberta de Catalunya (UOC), Máster en desarrollo de aplicaciones y sitios web</p>
+    </div>
+</footer>

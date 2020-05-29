@@ -1,0 +1,95 @@
+<div class="--mt">
+    <header class='--centered'>   
+        <div class="inputForm">
+            <h2>City Explorer</h2>
+            <form [formGroup]='stateForm' novalidate>
+                <div class="pos-rel">
+                    <label for="search">
+                        <i class='fa fa-search color-purple'></i>
+                    </label>
+                    <input id="search" placeholder="Select a city (Brussels, Belgium)" (click)="toggleDropDown()" formControlName="search" class="input_underline search-bar" type="text">
+                    <div *ngIf="showDropDown" class="state-container-dropdown">
+                        <div>
+                            <div (click)="selectValue(s)" class="state" *ngFor="let s of states|searchFilter: getSearchValue()">
+                                {{s.CITY_NAME}}, {{s.COUNTRY_NAME}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button mat-menu-item class="btn btn_explore" value="enable" (click)="initExplore()">Explore city data</button>
+        </div>
+    </header>      
+    
+    <div class="--pd">
+        <h2 class="--centered">Personal quality life index: <span id="pqli"></span></h2>
+        <div id="qliButtons">
+            <div class="ck-button">
+                <label>
+                   <input id="Health" type="checkbox" value="1"><span>Health</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label>
+                   <input id="Infraestructure" type="checkbox" value="1"><span>Infraestructure</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label>
+                   <input id="Environment" type="checkbox" value="1"><span>Environment</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label>
+                   <input id="Pollution" type="checkbox" value="1"><span>Pollution</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label>
+                   <input id="Safety" type="checkbox" value="1"><span>Safety</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label>
+                   <input id="Rent" type="checkbox" value="1"><span>Rent</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label>
+                   <input id="Employment" type="checkbox" value="1"><span>Employment</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label>
+                   <input id="Diversity" type="checkbox" value="1"><span>Diversity</span>
+                </label>
+            </div>
+            <div class="ck-button">
+                <label>
+                   <input id="Traffic" type="checkbox" value="1"><span>Traffic</span>
+                </label>
+            </div>
+            <button mat-menu-item class="btn" [disabled]="disabled" (click)="personalIndex()">Calculate personal index value</button>
+        </div>
+    </div>
+    
+    <div class="--currencie --pd --centered" id="currencieid">
+        <button mat-menu-item class="btn_currency" [disabled]="disabled" id="currencie" (click)="currencieChange()">Change currencie</button>
+        <mat-form-field class="--pd">
+            <mat-label>Select currencie</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let currencie of currencies" [value]="currencie" id="currencieoption">
+                {{currencie}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    
+    <div class="wrapper">
+        <div id="explorecity" class="wrapper__city --justified"></div>
+        <div id="explorecountry" class="wrapper__country --justified"></div>
+    </div>
+    <div id="cityweather" class="--justified"></div>
+    <div id="mapExplorer" class="map"></div>
+    
+</div>

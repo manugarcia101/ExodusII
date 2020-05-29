@@ -1,0 +1,183 @@
+//Containers
+
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  margin: 0 auto;
+  grid-template-areas: 'comparison' 'other';
+  @media screen and (min-width: 800px){
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'comparison other';
+  }
+}
+
+.wrapper__comparison {
+  grid-area: comparison;
+}
+
+.wrapper__other {
+  grid-area: other;
+}
+
+// Input form
+
+.search-bar {
+  min-width: 250px;
+  text-indent: 30px !important;
+  box-sizing: border-box;
+  @media screen and (min-width: 600px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 40%;
+  }
+}
+
+.search-drop-down {
+  position: absolute;
+  width: 50%;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 10;
+  background-color: #F6F6F6;
+  font-family: sans-serif;
+  opacity: 0.98;
+}
+
+.search-results {
+  padding: 10px;
+}
+
+.search-results:hover {
+  background: #707070;
+}
+
+.color-purple {
+  color: #A550BC;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.state-container-dropdown {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  max-height: 300px;
+  background: #F6F6F6;
+  overflow-y: auto;
+}
+
+.state {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;;
+  color: #A550BC;
+
+  &:hover {
+    background: #c2c2c2;
+  }
+}
+
+// Classes
+
+.flex {
+  display: flex;
+  width: 40%;
+  max-width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  max-width: 60%;
+  color: white;
+  background: rgb(247, 111, 0);
+
+  &:hover {
+    background: rgba(247, 111, 0, 0.9);
+  }
+
+  @media screen and (min-width: 600px) {
+    max-width: 50%;
+  }
+
+  @media screen and (min-width: 800px) {
+    max-width: 40%;
+  }
+}
+
+
+.btn_currency {
+  width: 40%;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  background: rgb(247, 111, 0);
+
+  &:hover {
+    background: rgba(247, 111, 0, 0.9);
+  }
+
+  @media screen and (max-width: 250px) {
+    width: 95%;
+  }
+
+  @media screen and (min-width: 400px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 500px) {
+    width: 55%;
+  }
+
+  @media screen and (min-width: 600px) {
+    width: 60%;
+  }
+
+  @media screen and (min-width: 700px) {
+    width: 65%;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 70%;
+  }
+}
+
+//Modifiers
+
+.--currencie {
+  display: inline;
+}
+
+.--centered {
+  text-align: center;
+  padding: 3%;
+  max-width: 100%;
+}
+
+.--justified {
+  text-align: justify;
+  align-items: center;
+  padding: 3%;
+  max-width: 100%;
+}
+
+.--pd {
+  padding: 2%;
+}
+
+.--mt {
+  padding-top: 50px;
+}
+
+.--inputForm {
+  justify-content: center;
+}
